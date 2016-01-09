@@ -24,7 +24,7 @@
          <?php
 
               include_once 'display/functions/otr.func.php';
-              otr('hello','hello world','index.php');
+              otr('FREEPDFs','Collection of pdfs that\'s avaliable on internet','#');
 
               include_once 'display/functions/amazing.func.php';
               amazing('I couldn’t take any pictures but this was an amazing thing…','hello world','index.php');
