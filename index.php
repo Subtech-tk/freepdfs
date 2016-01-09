@@ -1,83 +1,51 @@
-<?php //include "core.php";?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--index page-->
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>freepdf's</title>
-<meta name="keywords" content="freepdf's" />
-<meta name="description" content="The free pdf ebooks collection that's available on internet for free." />
-<link href="http://fonts.googleapis.com/css?family=Varela" rel="stylesheet" />
-<link href="default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<?php
+	//index.php
+  $page_name="index.php";
+	
+	$title="Index";
 
-</head>
+?>
+<!doctype html>
+<html lang="en-uk">
+<?php
+	//includind the head tag
+	require 'head.php';
+?>
 <body>
-<div id="wrapper">
-	<div id="header-wrapper">
-		<?php include "header.php";?>
-	</div>
-	<div id="banner">
-		<div class="container">
-			<div class="title">
-				<h2>freepdfs<!--main heading--></h2>
-				<span class="byline"><!--really cool tagline--></br></span> 
-				<span class="byline">The free pdf ebooks collection that's available on internet for free.</span>
-				<span class="byline"><!--Sheduled to be launch on 10th of July 2016 or 20th April 2016--></span>  
-			</div>
-			<ul class="actions">
-				<li><a href="<?php echo"$basicshelfs";?>" class="button">start here</a></li>
-			</ul>
-		</div>
-	</div>
-	<div id="extra" class="container">
-		<div class="title">
-			<h2>Please note</h2>
-			<span class="byline">The Books here are</span> </div>
-		<div id="three-column">
-			<div class="boxA">
-				<div class="box"> <span class="fa fa-cloud-download"></span>
-					<p>Free to download</p>
-				</div>
-			</div>
-			<!--<div class="boxB">
-				<div class="box"> <span class="fa fa-cogs"></span>
-					<p>Please don't Modify it</p>
-				</div>
-			</div>-->
-			<div class="boxC">
-				<div class="box"> <span class="fa fa-user"></span>
-					<p>And it is Stickly for personal use</p>
-				</div>
-			</div>
-		</div>
-		<ul class="actions2">
-			<li><a href="instruction" class="button">more instruction</a></li>
-		</ul>
-	</div>
-	<div id="featured">
-		<div class="container">
-			<div class="title">
-				<h2>contact us</h2>
-				<span class="byline">Having problem</span> </div>
-			<p>just contact us</p>
-		</div>
-		<ul class="actions">
-			<li><a href="contactus" class="button">contact us</a></li>
-		</ul>
-	</div>
-	<div id="page" class="container">
-		<div class="title">
-			<h2>About Us</h2>
-			<span class="byline">We are the group of students.</span> </div>
-		<p> </p>
-		<ul class="actions">
-			<li><a href="about" class="button">Know more</a></li>
-		</ul>
-	</div>
-</div>
-<div id="copyright" class="container">
-	<?php include "footer.php";?>
+<?php
+	// including the header of the document
+	require 'header.php';
+	// including the blog layout 
+?>
+<div>
+	<div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
+      <main class="mdl-layout__content">
+        <div class="demo-blog__posts mdl-grid">
+         <?php
+
+              include_once 'display/functions/otr.func.php';
+              otr('hello','hello world','index.php');
+
+              include_once 'display/functions/amazing.func.php';
+              amazing('I couldn’t take any pictures but this was an amazing thing…','hello world','index.php');
+              
+              include_once 'display/functions/shopping.func.php';
+              shopping('hello','hello world','index.php');
+
+              include_once 'display/next.nav.func.php';
+              next_nav('index.php');
+              
+         ?> 
+        </div>
+    <?php
+    	require 'footer.php';
+    ?>
+      </main>
+      <div class="mdl-layout__obfuscator"></div>
+    </div>
 </div>
 </body>
+<?php
+	require 'script.php';
+?>
 </html>
