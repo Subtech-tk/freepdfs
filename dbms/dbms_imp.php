@@ -1,7 +1,9 @@
 <?php
+
+// this file is set to default settings of localhost on xampp or lampp
 $mysql_host="127.0.0.1";
 $mysql_username="root";
-$mysql_password="root";
+$mysql_password="";
 $mysql_db="book";
 $connection=@mysqli_connect($mysql_host,$mysql_username,$mysql_password);
 if(!$connection)
