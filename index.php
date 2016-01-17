@@ -24,16 +24,16 @@
          <?php
 
               include_once 'display/functions/otr.func.php';
-              otr('FREEPDFs','Collection of pdfs that\'s avaliable on internet','#');
+              otr('FREEPDFs','Collection of pdfs that\'s avaliable on internet','bookshelfs');
 
               include_once 'display/functions/amazing.func.php';
-              amazing('I couldn’t take any pictures but this was an amazing thing…','hello world','index.php');
+              amazing('I couldn’t take any pictures but this was an amazing thing…','hello world','#');
               
-              include_once 'display/functions/shopping.func.php';
-              shopping('hello','hello world','index.php');
+              //include_once 'display/functions/shopping.func.php';
+              //shopping('hello','hello world','index.php');
 
-              include_once 'display/next.nav.func.php';
-              next_nav('index.php');
+              //include_once 'display/next.nav.func.php';
+              //next_nav('index.php');
               
          ?> 
         </div>
@@ -41,7 +41,7 @@
     	require 'footer.php';
     ?>
       </main>
-      <div class="mdl-layout__obfuscator"></div>
+      <!--<div class="mdl-layout__obfuscator"></div>-->
     </div>
 </div>
 </body>
