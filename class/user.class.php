@@ -3,10 +3,12 @@
 	/*
 		user base class
 
+		contains the details of the user specified by the id
+
 	*/
 	class user 
 	{
-		public $uid;		//user id
+		public $uid;		// user id
 		public $username;	// user username
 		public $email;		// user email
 		public $fname;		// user first name
@@ -19,6 +21,7 @@
 		public function get_user($id)
 		{
 			
+			// opening the database connection 
 			include 'dbms/dbms_imp.php';
 
 			$uid=$id;
@@ -33,7 +36,8 @@
             $this->status=$rowsuser[8];
             $this->level=$rowsuser[9];
 
-            //$connection->close;
+            //close the database connection 
+            mysqli_close($connection);
 		}
 	}
 ?>

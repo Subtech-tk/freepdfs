@@ -34,6 +34,7 @@
       }
       else
       {
+        
         $rows=$resultb->fetch_array();  
         $this->id=$rows[0];
         $this->booktitle=$rows[1];
@@ -48,6 +49,9 @@
         $this->author=$rows[13];
         $this->publisher=$rows[14];
         $this->uploader=$rows[15];
+
+        //close the database connection 
+        mysqli_close($connection);
 
         // to get user details 
         $this->get_user($this->uploader);
