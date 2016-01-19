@@ -59,6 +59,7 @@ html, body {
   padding: 8px;
   padding-top: 48px;
 }
+
 .mdl-demo .mdl-card {
   height: auto;
   display: -webkit-box;
@@ -253,3 +254,4 @@ html, body {
 .mdl-demo .mdl-menu__container {
   z-index: 99;
 }
+*/
