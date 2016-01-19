@@ -30,7 +30,7 @@
             include_once 'display/functions/otr.func.php';
             include_once 'display/functions/amazing.func.php';
 
-              $result=$connection->query("SELECT DISTINCT `subcat` FROM `books` WHERE `cat` LIKE '$cat' ORDER BY `subcat` DESC");
+              $result=$connection->query("SELECT DISTINCT `subcat` FROM `books` WHERE `cat` LIKE '$cat' ORDER BY `subcat` ASC");
               $count=$result->num_rows;
               if ($count==0) 
               {
