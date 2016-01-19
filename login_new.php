@@ -34,12 +34,12 @@
             <style>
               .demo-blog--blogpost .demo-blog__posts > .mdl-card .mdl-card__media 
               {
-                background-image: url('images/login_button_01.jpg');
+                background-image: url('images/login.jpg');
                 height: 200px;
               }
             </style>
             <div class="mdl-card__media mdl-color-text--grey-50">
-              <h3>Login</h3>
+              <h3></h3>
             </div>
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
             </div>
