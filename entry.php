@@ -39,6 +39,13 @@
         </div>-->
         <div class="demo-blog__posts mdl-grid">
           <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+            <style>
+              .demo-blog--blogpost .demo-blog__posts > .mdl-card .mdl-card__media 
+              {
+                background-image: url('images/road_big.jpg');
+                height: 500px;
+              }
+            </style>
             <div class="mdl-card__media mdl-color-text--grey-50">
               <h3><?php echo $bookbo->booktitle; ?></h3>
             </div>

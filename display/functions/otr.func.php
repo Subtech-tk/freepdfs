@@ -11,12 +11,24 @@
 		$link=	URL to ling the card 
 	*/
 
-	function otr($heading='heading',$content='content goes here',$link='#')
+	function otr($heading='heading',$content='content goes here',$link='#',$images='learn')
 	{
 		# code...
+		if ($images=='Web Development') 
+		{
+			$images='web';
+		}
+		$image='images/'.$images.'.jpg';
 ?>
 
 <div class="mdl-card on-the-road-again mdl-cell mdl-cell--12-col">
+	<style>
+		.demo-blog .on-the-road-again .mdl-card__media 
+		{
+		  background-image: url(<?php echo "$image"; ?>) ! important;
+		  /*height: 240px ! important;*/
+		}
+	</style>
 	<div class="mdl-card__media mdl-color-text--grey-50">
 		<h3><a href=<?php echo "\"$link\"";?>><?php echo "$heading";?></a></h3>
 	</div>

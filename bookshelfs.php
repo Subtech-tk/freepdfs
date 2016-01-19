@@ -26,7 +26,6 @@
             include 'core.php';
             include_once 'display/functions/otr.func.php';
             include_once 'display/functions/amazing.func.php';
-            include_once 'display/functions/shopping.func.php';
 
               $result=$connection->query("SELECT DISTINCT `cat` FROM `books` ");
               $count=$result->num_rows;
@@ -38,16 +37,7 @@
               while ($rows=$result->fetch_array())
               { 
                 $cat=$rows[0];
-
-                if ($i%2==0) 
-                {
-                  otr($cat,"Books related to $cat","subshelf?cat=$cat");
-                } 
-                else 
-                {
-                  shopping($cat,"Books related to $cat","subshelf?cat=$cat");
-                }
-                ++$i;
+                otr($cat,"Books related to $cat","subshelf?cat=$cat",$cat);
               }
          ?> 
         </div>

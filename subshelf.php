@@ -29,9 +29,8 @@
             include 'core.php';
             include_once 'display/functions/otr.func.php';
             include_once 'display/functions/amazing.func.php';
-            include_once 'display/functions/shopping.func.php';
 
-              $result=$connection->query("SELECT DISTINCT `subcat` FROM `books` WHERE `cat` LIKE '$cat'");
+              $result=$connection->query("SELECT DISTINCT `subcat` FROM `books` WHERE `cat` LIKE '$cat' ORDER BY `subcat` DESC");
               $count=$result->num_rows;
               if ($count==0) 
               {
@@ -41,16 +40,7 @@
               while ($rows=$result->fetch_array())
               { 
                 $subcat=$rows[0];
-
-                if ($i%2==0) 
-                {
-                  otr($subcat,"Books related to $subcat","booklist?tag=$subcat");
-                } 
-                else 
-                {
-                  shopping($subcat,"Books related to $subcat","booklist?tag=$subcat");
-                }
-                ++$i;
+                otr($subcat,"Books related to $subcat","booklist?tag=$subcat",$subcat);
               }
          ?> 
         </div>

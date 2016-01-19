@@ -17,6 +17,12 @@
 ?>
 
 <div class="mdl-card shopping mdl-cell mdl-cell--12-col">
+	<style>
+		.demo-blog .shopping .mdl-card__media 
+		{
+		  background-image: url('images/shopping.jpg');
+		}
+	</style>
 	<div class="mdl-card__media mdl-color-text--grey-50">
 		<h3><a href=<?php echo "\"$link\"";?>><?php echo "$heading";?></a></h3>
 	</div>
