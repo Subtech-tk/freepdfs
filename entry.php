@@ -45,8 +45,8 @@
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
               <div class="minilogo"></div>
               <div>
-                <strong><?php echo $bookbo->author; ?></strong>
-                <span><?php echo $bookbo->publisher; ?></span>
+                <strong><?php echo "Author- ".$bookbo->author; ?></strong>
+                <span><?php echo "Publisher- ".$bookbo->publisher; ?></span>
               </div>
               <div class="section-spacer"></div>
               <div class="meta__favorites">
@@ -70,6 +70,7 @@
             </div>
 
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+              
               <div class="section-spacer"></div>
               <div>
                 <strong><?php echo "We thanks ".$bookbo->username." For above book";?></strong>
@@ -103,6 +104,7 @@
       </main>
       <!--<div class="mdl-layout__obfuscator"></div>-->
     </div>
+    <a href="<?php echo $bookbo->durl ;?>" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast"><?php echo  "Download";//$bookbo->booktitle;?></a>
     <script src="../../material.min.js"></script>
   </div>
 </body>
