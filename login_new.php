@@ -47,23 +47,39 @@
               <p>
                 <!--login forum-->
                 <!-- Simple Textfield -->
+            <?php
+              $email=@$_POST['emailid'];
+              $password=@$_POST['password'];
+
+              if (isset($email) && isset($password)) 
+              {
+                if (!empty($email) && !empty($password)) 
+                {
+                  $login_user= new login($email,$password);
+                } 
+                else 
+                {
+                  echo "All fields are necessary";
+                }
+              }  
+            ?>
                 <form action="<?php echo $current_file; ?>" method="POST" enctype="" target="">
                   <div class="mdl-textfield mdl-js-textfield">
                     <fieldset>
                       <legend>Email id :</legend>
-                      <input class="mdl-textfield__input" id="sample1" type="email" name="emailid" value="">
-                      <!--<label class="mdl-textfield__label" for="sample1">email</label>-->
+                      <input class="mdl-textfield__input" id="email" type="email" name="emailid" value="<?php if (isset($email)) {echo "$email";}?>">
+                      <!--<label class="mdl-textfield__label" for="email">email</label>-->
                     </fieldset>
                     <br/>
                     <fieldset>
                       <legend>Password :</legend>
-                      <input class="mdl-textfield__input" id="sample1" type="password" name="password" value="">
-                      <!--<label class="mdl-textfield__label" for="sample1">password</label>-->
+                      <input class="mdl-textfield__input" id="password" type="password" name="password" value="">
+                      <!--<label class="mdl-textfield__label" for="password">password</label>-->
                     </fieldset>
                     <!--<input type="submit" name="log in" value="log in" size="5">-->
                     <!-- Flat button -->
                     <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-                    <button class="mdl-button mdl-js-button" action>
+                    <button class="mdl-button mdl-js-button">
                       Login
                     </button>
                     </div>
