@@ -7,6 +7,8 @@
   $ids=@$_GET['ref'];
   $ids=htmlentities($ids);
 
+  $ids=netutralize($ids);
+
   $bookbo = new book($ids);
   
   $title=$bookbo->booktitle;

@@ -6,6 +6,7 @@
   $cat=$_GET['cat'];
   $cat=htmlentities($cat);
 	$title=$cat;
+  $cat=netutralize($cat);
 
 // add a check condition to verify the cat
 ?>

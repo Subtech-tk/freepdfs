@@ -8,6 +8,7 @@
 
   // add a script to neutralize the injections
 	$title=$subcat;
+
 ?>
 <!doctype html>
 <html lang="en-uk">
@@ -31,6 +32,8 @@
             include_once 'display/functions/amazing.func.php';
             include_once 'display/functions/shopping.func.php';
 
+            $subcat=netutralize($subcat);
+            
               $result=$connection->query("SELECT `id`,`name`,`bref` FROM `books` WHERE `subcat`='$subcat' ORDER BY `name` ASC");
               $count=$result->num_rows;
               if ($count==0) 
