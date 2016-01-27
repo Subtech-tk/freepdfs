@@ -32,7 +32,7 @@
             include_once 'display/functions/amazing.func.php';
             include_once 'display/functions/shopping.func.php';
 
-            $subcat=netutralize($subcat);
+            $subcat=netutralize($subcat,$connection);
             
               $result=$connection->query("SELECT `id`,`name`,`bref` FROM `books` WHERE `subcat`='$subcat' ORDER BY `name` ASC");
               $count=$result->num_rows;
