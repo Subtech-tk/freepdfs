@@ -22,7 +22,8 @@
       <main class="mdl-layout__content">
         <div class="demo-blog__posts mdl-grid">
          <?php
-
+              include_once 'display/functions/get_image.func.php';
+              
               include_once 'display/functions/otr.func.php';
               otr('FREEPDFs','Collection of pdfs that\'s avaliable on internet','bookshelfs');
 

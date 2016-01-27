@@ -13,8 +13,11 @@
 
 	function otr($heading='heading',$content='content goes here',$link='#',$images='learn')
 	{
-		# code...
-		$image=get_image($images);
+		
+		if(function_exists('get_image'))
+		{
+			$image=get_image($images);
+		}
 ?>
 
 <div class="mdl-card on-the-road-again mdl-cell mdl-cell--12-col">

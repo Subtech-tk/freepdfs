@@ -34,7 +34,7 @@
               $count=$result->num_rows;
               if ($count==0) 
               {
-                amazing('Something Goes Wrong',"No bookshelfs found",'#');
+                amazing('Something Goes Wrong',"No subshelfs found realated to $cat","$http_referer");
               }
                 $i=1;
               while ($rows=$result->fetch_array())

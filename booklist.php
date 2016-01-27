@@ -35,7 +35,7 @@
               $count=$result->num_rows;
               if ($count==0) 
               {
-                amazing('Something Goes Wrong',"No books are there on this subshelf",'#');
+                amazing('Something Goes Wrong',"No books are there on this subshelf related to $subcat","$http_referer");
               }
                 $i=1;
               while ($rows=$result->fetch_array())
