@@ -1,7 +1,13 @@
 <?php
 //ini_set('display_errors','0');	//to be set active when site goes live
 // core file must be include in all pages
-include "dbms/dbms_imp.php";
+
+include 'dbms/dbms_imp.php';
+//include_once "functions/";
+
+include_once 'functions/get_image.func.php';
+include_once 'functions/validate.func.php';
+include_once 'functions/netutralize.func.php';
 
 spl_autoload_register(function ($class) 
 {

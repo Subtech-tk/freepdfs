@@ -42,12 +42,13 @@
             <style>
               .demo-blog--blogpost .demo-blog__posts > .mdl-card .mdl-card__media 
               {
-                background-image: url('images/road_big.jpg');
-                height: 500px;
+                /*background-image: url('images/road_big.jpg');*/
+                height: 100px;
               }
             </style>
+              <iframe src="<?php echo "$bookbo->preview";?>" width="880" height="980" frameborder="0"></iframe>
             <div class="mdl-card__media mdl-color-text--grey-50">
-              <h3><?php echo $bookbo->booktitle; ?></h3>
+                <h3><?php echo $bookbo->booktitle; ?></h3>
             </div>
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
               <div class="minilogo"></div>

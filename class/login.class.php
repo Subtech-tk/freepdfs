@@ -13,6 +13,7 @@
 
 		function __construct($email,$password)
 		{
+			// add a sentizer script to neutralize the var
 			if ($this->password_hash_comp($email,$password)) 
 			{
 				include 'dbms/dbms_imp.php';

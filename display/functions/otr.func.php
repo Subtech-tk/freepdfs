@@ -14,11 +14,7 @@
 	function otr($heading='heading',$content='content goes here',$link='#',$images='learn')
 	{
 		# code...
-		if ($images=='Web Development') 
-		{
-			$images='web';
-		}
-		$image='images/'.$images.'.jpg';
+		$image=get_image($images);
 ?>
 
 <div class="mdl-card on-the-road-again mdl-cell mdl-cell--12-col">
