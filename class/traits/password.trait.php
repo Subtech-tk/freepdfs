@@ -17,9 +17,10 @@
 
 		public function password_hash_gen($email,$password,$uid)
 		{
-			for ($i=0; $i <$uid ; $i++) 
+			$password_hash="$email.$password";
+			for ($i=0; $i < $uid%10 ; $i++) 
 			{ 
-				$password_hash=md5($email.$password);
+				$password_hash=md5($password_hash);
 			}
 			unset($password);
 			return $password_hash;
