@@ -7,8 +7,6 @@
 
 	function validate_email($value)
 	{
-		filter_var($value);
-
 		// Remove all illegal characters from email
 		$value = filter_var($value, FILTER_SANITIZE_EMAIL);
 

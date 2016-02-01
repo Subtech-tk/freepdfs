@@ -6,7 +6,7 @@
   $cat=$_GET['cat'];
   $cat=htmlentities($cat);
 	$title=$cat;
-  $cat=netutralize($cat);
+  
 
 // add a check condition to verify the cat
 ?>
@@ -30,6 +30,8 @@
             include 'core.php';
             include_once 'display/functions/otr.func.php';
             include_once 'display/functions/amazing.func.php';
+
+            $cat=netutralize($cat,$connection);
 
               $result=$connection->query("SELECT DISTINCT `subcat` FROM `books` WHERE `cat` LIKE '$cat' ORDER BY `subcat` ASC");
               $count=$result->num_rows;

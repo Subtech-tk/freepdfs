@@ -4,36 +4,91 @@
 	include_once 'traits/password.trait.php';
 	/*
 		it is class used for the registration of user
+
+		public $uid;		// user id
+		public $username;	// user username
+		public $email;		// user email
+		public $fname;		// user first name
+		public $lname;		// user last name
+		public $gender;		// user gender
+		public $dob;		// user data-of-birth
+		public $status;		// user status
+		public $level; 		// user level
 	*/
 	class ClassName extends user
 	{
 		
+		private $password;
+
 		// including password trait methods
 		use password;
 
-		function __construct(argument)
-		{
-			# code...
-		}
-
-		public function neutralize()	// function to neutralize the data
+		function __construct()
 		{
 			# code...
 		}
 
 		public function add()			// function to add data to database without password
 		{
-			# code...
+			include 'dbms/dbms_imp.php';
+
+			$insert_query="INSERT INTO `userdetail` (`uniqueid`, `username`, `password`, `emailid`, `firstname`, `surname`, `gender`, `dob`, `status`) 
+				VALUES ('','$this->username','','$this->email','$this->fname','$this->lname','$this->gender','$this->dob','unverified')";
+			
+			$mysql_query_run=$connection->query($insert_query);
+			
+			mysqli_close($connection);
+			
+			if(!$mysql_query_run)
+			{
+				// error occurs
+				echo "<br>Error writing data".@mysqli_error($connection);
+			}
+			else
+			{
+				$this->get_userid();
+				$this->add_password();
+			}
+
 		}
 
 		public function get_userid()	// function to get userid back
 		{
-			# code...
+			include 'dbms/dbms_imp.php';
+			
+			$sql= "SELECT `uniqueid` FROM `userdetail` WHERE `emailid`='$this->email';";
+			
+			$mysql_query_run=$connection->query($sql);
+			
+			if(!$mysql_query_run)
+			{
+				// error occurs
+				echo "<br>Error getting data".@mysqli_error($connection);
+			}
+			else
+			{
+				$rows=$mysql_query_run->fetch_array();
+				$this->uid=$rows[0];
+			}
 		}
 
 		public function add_password()	// function to add the password to corresponding userid
 		{
-			# code...
+			$this->password=password_hash_gen($this->email,$this->password,$this->uid)
+
+			include 'dbms/dbms_imp.php';
+
+			$sql = "UPDATE `userdetail` SET `password` = '$this->password' WHERE `uniqueid` = '$userid'";
+			
+			$mysql_query_run=$connection->query($sql);
+
+			if(!$mysql_query_run)
+			{
+				// error occurs
+				echo "<br>Error writing data".@mysqli_error($connection);
+			}
 		}
+
+
 	}
 ?>

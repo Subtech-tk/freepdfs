@@ -7,7 +7,9 @@
   $ids=@$_GET['ref'];
   $ids=htmlentities($ids);
 
-  $ids=netutralize($ids);
+  include 'dbms/dbms_imp.php';
+  $ids=netutralize($ids,$connection);
+  mysqli_close($connection);
 
   $bookbo = new book($ids);
   

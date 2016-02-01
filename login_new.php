@@ -1,6 +1,10 @@
 <?php
   //login.php
-  $page_name="entry.php";
+  $page_name="Login.php";
+
+  $title="Login";
+  
+  $keywords="Login";
 
   include 'core.php';
  
@@ -55,6 +59,9 @@
               {
                 if (!empty($email) && !empty($password)) 
                 {
+                  include 'dbms/dbms_imp.php';
+                  $email=netutralize($email,$connection);
+                  mysqli_close($connection);
                   $login_user= new login($email,$password);
                 } 
                 else 
