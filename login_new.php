@@ -7,7 +7,11 @@
   $keywords="Login";
 
   include 'core.php';
- 
+  
+  if (islogin()) 
+  {
+    header('Location: '.$http_referer);
+  }
 ?>
 
 <!doctype html>
@@ -48,10 +52,9 @@
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
             </div>
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
-              <p>
-                <!--login forum-->
-                <!-- Simple Textfield -->
-            <?php
+              <p>     
+          <?php
+              //login forum
               $email=@$_POST['emailid'];
               $password=@$_POST['password'];
 
@@ -69,7 +72,7 @@
                   echo "All fields are necessary";
                 }
               }  
-            ?>
+          ?>
                 <form action="<?php echo $current_file; ?>" method="POST" enctype="" target="">
                   <div class="mdl-textfield mdl-js-textfield">
                     <fieldset>

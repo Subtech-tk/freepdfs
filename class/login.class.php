@@ -21,13 +21,14 @@
 				mysqli_close($connection);
 				$row=$query_run->fetch_array();
 
-				$user= new user;
-				$user->get_user($row[0]);
-				$_SESSION['current_user']=$user;
-				$GLOBALS[$user]=$_SESSION['current_user'];
+				//$user= new user;
+				$user=$row[0];
+				$_SESSION['user']=$user;
+				$GLOBALS[$user]=$_SESSION['user'];
 
-				// redirect to userpage
-
+				//redirect to userpage
+				$current_file=$_SERVER['SCRIPT_NAME'];
+				header('location:'.$current_file); 	//to redirect to current page untill userpage is not made
 				echo "Logged in";
 			} 
 			else 

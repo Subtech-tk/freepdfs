@@ -92,12 +92,27 @@
             <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
               <?php
                 // including the comment forum
+                
+                if (islogin())  //this will work only if user is login 
+                {
+
+                  $comment=$_POST['comment'];
+
+                  if (isset($comment) && !empty($comment)) 
+                  {
+                    $comobj = new comment;
+                    $comobj->get_comment($ids,$comment);
+                    $comobj->check_exist();
+                    $comobj->add_comment();
+                  } 
+                }
+
                 include 'display/forms/comment.form.php';
 
                 // including the comments 
                 include 'display/functions/comment.func.php';
                 include 'dbms/dbms_imp.php';
-                $resultc=$connection->query("SELECT `cid` FROM `comments` WHERE `bookid`='$ids'");
+                $resultc=$connection->query("SELECT `cid` FROM `comments` WHERE `bookid`='$ids' ORDER BY `cid` DESC");
                 mysqli_close($connection);
 
                 while ($rows=$resultc->fetch_array())

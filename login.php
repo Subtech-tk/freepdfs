@@ -1,62 +1,61 @@
-<?php //login.php
-include "core.php";
-//include_once '/user/core.inc.php';
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--log in page-->
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Log in</title>
-<meta name="keywords" content="PDFs Books" />
-<meta name="description" content="Free Pdfs to download" />
-<link href="http://fonts.googleapis.com/css?family=Varela" rel="stylesheet" />
-<link href="default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<?php
+  //login.php
+  $page_name="Login.php";
 
-</head>
+  $title="Login";
+  
+  $keywords="Login";
+
+  include 'core.php';
+ 
+?>
+
+<!doctype html>
+
+<html lang="en">
+<?php
+  //includind the head tag
+  require 'head.php';
+?>
+
 <body>
-<div id="wrapper">
-	<div id="header-wrapper">
-		<?php include "header.php";?>
-	</div>
-	<div id="banner">
-		<div class="container">
-			<div class="title">
-				<h2>Login</h2>
-				<span class="byline">Please provide us with Following Details About Yourself. 
-				</span>  
-			</div>
-		</div>
-	</div>
-	<div id="featured">
-		<div class="container">
-			<div class="title">
-				<h2></h2>
-				<span class="byline">
-				</span> </div>
-			<?php include "user/login.php";?>
-		</div>
-	</div>
-	<?php
-	if (loggedin()!=1) 
-	{
-	?>
-	<div id="page" class="container">
-		<div class="title">
-			<h2></h2>
-			<span class="byline">New Here</span> </div>
-		<p>Join Us</p>
-		<ul class="actions">
-			<li><a href="joinus" class="button">Join us</a></li>
-		</ul>
-	</div>
-	<?php
-	}
-	?>
-</div>
-<div id="copyright" class="container">
-	<?php include "footer.php";?>
-</div>
+
+<?php
+  // including the header of the document
+  require 'header.php';
+  // including the blog layout 
+?>
+<div>
+    <div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
+      <main class="mdl-layout__content">
+        <!--<div class="demo-back">
+          <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="index.html" title="go back" role="button">
+            <i class="material-icons" role="presentation">arrow_back</i>
+          </a>
+        </div>-->
+        <div class="demo-blog__posts mdl-grid">    
+          <?php
+            if (islogin()) 
+            {
+            	include 'display/functions/amazing.func.php';
+            	amazing($heading='Already loged in',$content='It seems You are alrady loged in.<br/>No need to login Again. :)',$link='#');
+            } 
+            else 
+            {
+                //login forum
+            	include 'functions/login.func.php';
+             	login($message='');
+          	}
+          ?>
+          <!--navigation panel for large database-->
+        </div>
+    <?php
+      require 'footer.php';
+    ?>
+      </main>
+      <!--<div class="mdl-layout__obfuscator"></div>-->
+    </div>
+    <script src="../../material.min.js"></script>
+  </div>
 </body>
 </html>

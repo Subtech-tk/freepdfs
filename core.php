@@ -4,18 +4,23 @@
 
 include 'dbms/dbms_imp.php';
 //include_once "functions/";
+include_once 'functions/islogin.func.php';
 include_once 'display/functions/get_image.func.php';
 include_once 'functions/validate.func.php';
 include_once 'functions/netutralize.func.php';
+
 
 spl_autoload_register(function ($class) 
 {
     include 'class/'.$class.'.class.php';
 });
 
-//@ob_start();
+ob_start();
 
-@session_start();
+// for debuging
+	$debug=true;
+
+session_start();
 
 $current_file=$_SERVER['SCRIPT_NAME'];
 $http_referer=@$_SERVER['HTTP_REFERER'];
@@ -23,5 +28,5 @@ $http_referer=@$_SERVER['HTTP_REFERER'];
 	
 	//echo $current_file;
 
-	$userid=@$_SESSION['id'];
+	$userid=@$_SESSION['user'];
 ?>

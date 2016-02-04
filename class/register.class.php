@@ -15,7 +15,7 @@
 		public $status;		// user status
 		public $level; 		// user level
 	*/
-	class ClassName extends user
+	class register extends user
 	{
 		
 		private $password;
@@ -23,9 +23,10 @@
 		// including password trait methods
 		use password;
 
-		function __construct()
+		function __construct($password1)
 		{
-			# code...
+			$this->password=$password1;
+			unset($password1);
 		}
 
 		public function add()			// function to add data to database without password
@@ -42,7 +43,7 @@
 			if(!$mysql_query_run)
 			{
 				// error occurs
-				echo "<br>Error writing data".@mysqli_error($connection);
+				echo "<br>Error writing data".mysqli_error($connection);
 			}
 			else
 			{
@@ -63,7 +64,7 @@
 			if(!$mysql_query_run)
 			{
 				// error occurs
-				echo "<br>Error getting data".@mysqli_error($connection);
+				echo "<br>Error getting data".mysqli_error($connection);
 			}
 			else
 			{
@@ -74,18 +75,18 @@
 
 		public function add_password()	// function to add the password to corresponding userid
 		{
-			$this->password=password_hash_gen($this->email,$this->password,$this->uid)
+			$this->password=$this->password_hash_gen($this->email,$this->password,$this->uid);
 
 			include 'dbms/dbms_imp.php';
 
-			$sql = "UPDATE `userdetail` SET `password` = '$this->password' WHERE `uniqueid` = '$userid'";
+			$sql = "UPDATE `userdetail` SET `password` = '$this->password' WHERE `uniqueid` = '$this->uid'";
 			
 			$mysql_query_run=$connection->query($sql);
 
 			if(!$mysql_query_run)
 			{
 				// error occurs
-				echo "<br>Error writing data".@mysqli_error($connection);
+				echo "<br>Error writing data".mysqli_error($connection);
 			}
 		}
 

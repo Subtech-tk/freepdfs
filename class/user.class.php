@@ -5,6 +5,24 @@
 
 		contains the details of the user specified by the id
 
+		Table structure for table userdetail
+
+		|-------------------------------------------|
+		|Column		|Type		|Null	|Default 	|
+		|-------------------------------------------|
+		|uniqueid	|int(11)	|No		|			|
+		|username	|varchar(40)|No		|			|
+		|password	|varchar(33)|No		|			|
+		|emailid	|varchar(50)|No		|			|
+		|firstname	|varchar(40)|No		|			|
+		|surname	|varchar(40)|No		|			|
+		|gender		|varchar(2)	|No		|			|
+		|dob		|date 		|No		|			|
+		|status		|varchar(20)|No		|			|
+		|level		|varchar(10)|No		|user 		|
+		|-------------------------------------------|
+
+
 	*/
 	class user 
 	{
